@@ -1,0 +1,54 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video{
+
+    position: relative; // el padre siempre relativo
+    min-height:  58rem;
+    max-height: 70rem;
+    overflow: hidden;
+    .overlay{
+        position: absolute; 
+        background: linear-gradient(
+            270deg,
+            rgba(v.$negro, 30%),
+            rgba(v.$negro, 60%)
+            
+        );
+        inset: 0;
+        display: flex;
+        align-items: center;
+
+    }
+
+    video{
+        display: block;
+        width: auto;
+        @include m.desktop{
+            width: 100%;
+        }
+    }
+}
+
+.contenido-video{
+    z-index: 10;
+    h2{
+        color: v.$blanco;
+        font-size: 5rem;
+    }
+    p{
+        background-color: v.$verdeC;
+        display: inline-block;
+        color: v.$blanco;
+        padding: 2rem;
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        &:hover{
+            box-shadow: 0 3px 8px v.$blanco;
+            
+    
+        }
+    }
+
+}

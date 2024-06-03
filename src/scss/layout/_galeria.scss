@@ -1,0 +1,98 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.galeria{
+   @include m.contenedor;
+&-imagenes{
+    gap: 2rem;
+    @include m.grid(1);
+
+    @include m.telefono{
+        @include m.grid(2);
+        gap: 2rem;
+    }
+    @include m.tablet{
+        @include m.grid(3);
+        gap: 2rem;
+    }
+    @include m.desktop{
+        @include m.grid(4);
+        gap: 2rem;
+    }
+    img{
+        height: 20rem;
+        object-fit: cover;
+        cursor: pointer;
+        @include m.desktop{
+            transition: transform ease 0.5s;
+        }
+        @include m.desktop{
+            &:hover{
+                transform: scale(1.1);
+                box-shadow: 0 1px 4px black;
+            }
+        }
+
+        @include m.tablet{
+            &:hover{
+            box-shadow: 0 1px 4px black;
+        }}
+       
+    }
+    
+}
+
+}
+
+.modal{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(v.$negro, 0.5);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    animation: fadeIn ease-in 0.5s;
+    &.fade-out{
+        animation: fadeOut ease-in 0.5s;
+    }
+
+    img{
+        max-width: 100rem;
+       
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0; 
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut{
+    0%{
+        opacity: 1; 
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.btn-cerrar{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: v.$blanco;
+    border: none;
+    color: v.$negro;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover{
+        background-color: #f1f1f1;
+    }
+}
+
+

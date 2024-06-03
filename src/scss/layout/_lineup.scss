@@ -1,0 +1,81 @@
+@use 'base/variables' as v;
+@use  'base/mixins' as m;
+
+.lineup {
+    background-color: v.$negro;
+    h3, .dia{
+        text-align: center;
+        color: v.$blanco;
+    }
+    .dia{
+        
+        font-size: 2.5rem;
+        text-transform: uppercase;
+    }
+}
+.escenarios-contenedor{
+    @include m.contenedor;
+    @include m.tablet{
+        @include m.grid(2);
+    }
+}
+
+.escenario {
+    padding-top: 2rem;
+    margin-top: 1.5rem;
+   
+    .nombre-escenario{
+        font-size: 3rem;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+        color: v.$blanco;
+        
+    }
+}
+
+.calendario {
+    @include m.resetear-lista;
+    color: v.$blanco;
+    
+  
+
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+    }
+
+    span{
+        font-weight: 400;
+
+    }
+}
+
+.bg-verdeO{
+    background-color: v.$verdeO;
+
+    li:nth-child(odd) {
+        background-color: lighten(v.$verdeO, 5%);
+        
+    }
+    &:hover{
+        box-shadow: 0 3px 8px v.$blanco;
+        
+
+    }
+
+}
+
+
+.bg-verdeC{
+    background-color: v.$verdeC;
+
+    li:nth-child(odd) {
+        background-color: lighten(v.$verdeC, 5%);
+    }
+    &:hover{
+        box-shadow: 0 3px 8px v.$blanco;
+        
+
+    }
+}

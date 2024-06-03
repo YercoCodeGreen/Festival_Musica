@@ -1,0 +1,95 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-boletos{
+    background-color: v.$negro;
+    color: white;
+    
+   h3{
+    color: v.$blanco;
+   }
+   .boletos{
+    padding-bottom: 30rem;
+    @include m.contenedor;
+    @include m.tablet{
+        @include m.grid(2);
+    }
+   }
+}
+
+.pase{
+    @include m.tablet{
+    transition: box-shadow .3s ease;
+    &:hover{
+        box-shadow: 0px 0px 4px #f1f1f1;
+    }}
+    &-nombre{
+        font-size: 3rem;
+        font-weight: 800;
+        text-align: center;
+        color: v.$blanco;
+    }
+    &-header,
+    &-footer{
+        padding: 1.5rem;
+
+        p{
+            text-align: center;
+            color: v.$blanco;
+            margin: 0;
+            font-weight: 800;
+        }
+    }
+    &-header{
+        background-color: v.$verdeC;
+        p{
+            margin: 0;
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+            padding: 2rem 0;
+        }
+    }
+    &-body{
+        background-color: v.$blanco;
+        
+        ul{
+            @include m.resetear-lista;
+            padding: 2rem;
+            color: v.$negro;
+            font-size: 2rem;
+            font-weight: 600;
+            li{
+                padding: 2rem;
+               
+            }
+            
+        }
+    }
+    &-footer{
+        background-color: v.$blanco;
+        margin: 0;
+        padding: 1.5rem;
+        
+        a{
+            background-color: v.$verdeC;
+            font-size: 2rem;
+            font-weight: 700;
+            color: v.$blanco;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 1rem;
+            
+
+          
+            &:hover{
+                background-color: darken(v.$verdeC, 20);
+                transition: 0.5s ease;
+                
+            }
+        }
+    }
+}
